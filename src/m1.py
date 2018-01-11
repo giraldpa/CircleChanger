@@ -375,7 +375,7 @@ class CircleChanger(object):
             :rtype CircleChanger
         """
         ################################################################
-        # TODO: 6.
+        # Done: 6.
         #   First, READ the doc-string (specification) above.
         #   Second, READ the   run_test_swallow   function (below).
         #   Third, implement and test this method.
@@ -417,7 +417,7 @@ class CircleChanger(object):
             :type index_of_color: int
         """
         ################################################################
-        # TODO: 7.
+        # Done: 7.
         #   First, READ the doc-string (specification) above.
         #   Second, READ the   run_test_change_color   function (below).
         #   Third, implement and test this method.
@@ -435,7 +435,7 @@ class CircleChanger(object):
                was constructed.
         """
         ################################################################
-        # TODO: 8.
+        # Done: 8.
         #   First, READ the doc-string (specification) above.
         #   Second, READ the   run_test_change_to_original_color   function
         #   (below).  Third, implement and test this method.
@@ -475,16 +475,20 @@ class CircleChanger(object):
         fill color have no effect on or interaction with this method.
         """
         ################################################################
-        # TODO: 9.
+        # done: 9.
         #   First, READ the doc-string (specification) above.
         #   Second, READ the   run_test_change_to_next_color_in_tuple
         #   function (below).  Third, implement and test this method.
         ################################################################
-        self.circle.fill_color = self.colors[self.index]
-        self.index = self.index + 1 % self.index
+        self.circle.fill_color = self.colors[self.index % len(self.colors)]
+        self.index = self.index + 1
+
+        # can't use modulus after the self.index +1 because that returns a
+        # number and you want it to return to the beginning of the index not
+        #  a number
+        ########################################################################
 
 
-########################################################################
 # The TEST functions for the  CircleChanger  class begin here.
 ########################################################################
 
